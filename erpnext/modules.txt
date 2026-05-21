@@ -1,0 +1,11 @@
+Accounts
+Buying
+Selling
+Setup
+Stock
+Assets
+Portal
+Regional
+ERPNext Integrations
+Communication
+Utilities
