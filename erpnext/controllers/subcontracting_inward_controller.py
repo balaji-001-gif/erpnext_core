@@ -1110,11 +1110,7 @@ class SubcontractingInwardController:
 
 	def update_inward_order_status(self):
 		if self.subcontracting_inward_order:
-			return  # Subcontracting module not present in this build  # from erpnext.subcontracting.doctype.subcontracting_inward_order.subcontracting_inward_order import (
-				update_subcontracting_inward_order_status,
-			)
-
-			update_subcontracting_inward_order_status(self.subcontracting_inward_order)
+			return  # Subcontracting module not present in this build
 
 
 @frappe.whitelist()
