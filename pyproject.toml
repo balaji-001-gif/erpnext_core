@@ -1,46 +1,11 @@
 [project]
-name = "erpnext"
-authors = [
-    { name = "Your Org", email = "dev@yourorg.com" }
-]
-description = "ERPNext Core — Accounts, Buying, Selling, Stock, Assets. Manufacturing and Quality Management removed."
-requires-python = ">=3.10"
-readme = "README.md"
+name = "erpnext-core"
+# dynamic version will be set by flit
 dynamic = ["version"]
-dependencies = [
-    "Unidecode~=1.4.0",
-    "barcodenumber~=0.5.0",
-    "rapidfuzz~=3.14.3",
-    "holidays~=0.87",
-    "googlemaps~=4.10.0",
-    "plaid-python~=7.2.1",
-    "python-youtube~=0.9.8",
-    "pypng~=0.20220715.0",
-    "mt-940>=4.26.0",
-]
+description = "Minimal ERPNext Core"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["frappe>=16,<17"]
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.bench.frappe-dependencies]
-frappe = ">=16.0.0,<17.0.0"
-
-[tool.ruff]
-line-length = 110
-target-version = "py310"
-
-[tool.ruff.lint]
-select = ["F", "E", "W", "I", "UP", "B", "RUF"]
-ignore = ["B017","B018","B023","B904","E101","E402","E501","E741",
-          "F401","F403","F405","F722","W191","RUF001"]
-typing-modules = ["frappe.types.DF"]
-
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "tab"
-docstring-code-format = true
-
-[project.urls]
-Homepage = "https://yourorg.com"
-Repository = "https://github.com/yourorg/erpnext_core"
+[tool.flit.module]
+name = "erpnext"
