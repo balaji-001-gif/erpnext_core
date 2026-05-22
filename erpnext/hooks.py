@@ -339,7 +339,7 @@ period_closing_doctypes = [
 	"Landed Cost Voucher",
 	"Purchase Receipt",
 	"Stock Reconciliation",
-	"Subcontracting Receipt",
+	# [REMOVED - module not in this build] "Subcontracting Receipt",
 ]
 
 doc_events = {
@@ -568,10 +568,10 @@ accounting_dimension_doctypes = [
 	"Purchase Order",
 	"Purchase Receipt",
 	"Sales Order",
-	"Subcontracting Order",
-	"Subcontracting Order Item",
-	"Subcontracting Receipt",
-	"Subcontracting Receipt Item",
+	# [REMOVED - module not in this build] "Subcontracting Order",
+	# [REMOVED - module not in this build] "Subcontracting Order Item",
+	# [REMOVED - module not in this build] "Subcontracting Receipt",
+	# [REMOVED - module not in this build] "Subcontracting Receipt Item",
 	"Account Closing Balance",
 	"Supplier Quotation",
 	"Supplier Quotation Item",
