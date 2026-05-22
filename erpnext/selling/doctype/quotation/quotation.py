@@ -29,7 +29,6 @@ class Quotation(SellingController):
 		from erpnext.accounts.doctype.sales_taxes_and_charges.sales_taxes_and_charges import (
 			SalesTaxesandCharges,
 		)
-		return  # CRM module not present in this build
 		from erpnext.selling.doctype.quotation_item.quotation_item import QuotationItem
 		from erpnext.setup.doctype.quotation_lost_reason_detail.quotation_lost_reason_detail import (
 			QuotationLostReasonDetail,
