@@ -1,5 +1,5 @@
 [project]
-name = "erpnext-core"
+name = "erpnext_core"
 # dynamic version will be set by flit
 dynamic = ["version"]
 description = "Minimal ERPNext Core"
