@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="erpnext_core",
+    name="erpnext",
     version="0.0.0",
     description="ERPNext Core — Accounts, Buying, Selling, Stock, Assets. Manufacturing and Quality Management removed.",
     packages=find_packages(include=["erpnext*"], exclude=["semgrep*"]),
