@@ -1,14 +1,7 @@
-# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
-# License: GNU General Public License v3. See license.txt
-
-
-import frappe
-from frappe.model.utils.rename_field import rename_field
+# [PATCHED] Projects module not present in this build.
+# This patch renamed fields in Project doctype — no-op in erpnext_core.
 
 
 def execute():
-	frappe.reload_doc("projects", "doctype", "project")
-
-	if frappe.db.has_column("Project", "from"):
-		rename_field("Project", "from", "from_time")
-		rename_field("Project", "to", "to_time")
+	"""No-op: Projects module removed from this build."""
+	pass

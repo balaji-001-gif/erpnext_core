@@ -1,24 +1,7 @@
-# Copyright (c) 2020, Frappe and Contributors
-# License: GNU General Public License v3. See license.txt
-
-
-import frappe
+# [PATCHED] Support module not present in this build.
+# This patch renamed Issue status 'Hold' to 'On Hold' — no-op in erpnext_core.
 
 
 def execute():
-	if frappe.db.exists("DocType", "Issue"):
-		frappe.reload_doc("support", "doctype", "issue")
-		rename_status()
-
-
-def rename_status():
-	frappe.db.sql(
-		"""
-		UPDATE
-			`tabIssue`
-		SET
-			status = 'On Hold'
-		WHERE
-			status = 'Hold'
-	"""
-	)
+	"""No-op: Support module removed from this build."""
+	pass

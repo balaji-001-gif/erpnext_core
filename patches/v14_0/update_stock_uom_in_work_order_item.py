@@ -1,15 +1,7 @@
-import frappe
+# [PATCHED] Manufacturing module not present in this build.
+# This patch updated stock_uom in Work Order Items — no-op in erpnext_core.
 
 
 def execute():
-	frappe.db.sql(
-		"""
-		UPDATE
-			`tabWork Order Item`, `tabItem`
-		SET
-			`tabWork Order Item`.stock_uom = `tabItem`.stock_uom
-		WHERE
-			`tabWork Order Item`.item_code = `tabItem`.name
-			AND `tabWork Order Item`.docstatus = 1
-	"""
-	)
+	"""No-op: Manufacturing module removed from this build."""
+	pass

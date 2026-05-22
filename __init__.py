@@ -1,7 +1,9 @@
+from __future__ import unicode_literals
+
 import functools
 import inspect
 from typing import TypeVar
-from __future__ import unicode_literals
+
 import frappe
 from frappe.model.document import Document
 from frappe.utils.user import is_website_user

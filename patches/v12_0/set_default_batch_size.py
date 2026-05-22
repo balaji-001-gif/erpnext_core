@@ -1,23 +1,7 @@
-import frappe
+# [PATCHED] Manufacturing module not present in this build.
+# This patch set default batch size — no-op in erpnext_core.
 
 
 def execute():
-	frappe.reload_doc("manufacturing", "doctype", "bom_operation")
-	frappe.reload_doc("manufacturing", "doctype", "work_order_operation")
-
-	frappe.db.sql(
-		"""
-        UPDATE
-            `tabBOM Operation` bo
-        SET
-            bo.batch_size = 1
-    """
-	)
-	frappe.db.sql(
-		"""
-        UPDATE
-            `tabWork Order Operation` wop
-        SET
-            wop.batch_size = 1
-    """
-	)
+	"""No-op: Manufacturing module removed from this build."""
+	pass
