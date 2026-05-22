@@ -43,11 +43,8 @@ def after_install():
 
 
 def make_default_operations():
-	for operation in ["Assembly"]:
-		if not frappe.db.exists("Operation", operation):
-			doc = frappe.get_doc({"doctype": "Operation", "name": operation})
-			doc.flags.ignore_mandatory = True
-			doc.insert(ignore_permissions=True)
+	# [REMOVED] Operation doctype is part of the manufacturing module, which isn't present in this build
+	pass
 
 
 def set_single_defaults():
