@@ -1,4 +1,4 @@
-app_name = "erpnext_core"
+app_name = "erpnext"
 app_title = "ERPNext Core"
 app_publisher = "Your Org"
 app_description = """ERPNext Core — Accounts, Buying, Selling, Stock, Assets. Manufacturing and Quality removed."""
