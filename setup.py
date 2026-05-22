@@ -4,7 +4,7 @@ setup(
     name="erpnext_core",
     version="0.0.0",
     description="ERPNext Core — Accounts, Buying, Selling, Stock, Assets. Manufacturing and Quality Management removed.",
-    packages=find_packages(),
+    packages=["erpnext"],
     include_package_data=True,
     install_requires=[
         "Unidecode~=1.4.0",
