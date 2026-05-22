@@ -258,12 +258,7 @@ def get_preset_records(country=None):
 		{"doctype": "Mode of Payment", "mode_of_payment": _("Credit Card"), "type": "Bank"},
 		{"doctype": "Mode of Payment", "mode_of_payment": _("Wire Transfer"), "type": "Bank"},
 		{"doctype": "Mode of Payment", "mode_of_payment": _("Bank Draft"), "type": "Bank"},
-		# Activity Type
-		{"doctype": "Activity Type", "activity_type": _("Planning")},
-		{"doctype": "Activity Type", "activity_type": _("Research")},
-		{"doctype": "Activity Type", "activity_type": _("Proposal Writing")},
-		{"doctype": "Activity Type", "activity_type": _("Execution")},
-		{"doctype": "Activity Type", "activity_type": _("Communication")},
+		# [REMOVED - Activity Type doctype removed from Frappe core]
 		{
 			"doctype": "Item Attribute",
 			"attribute_name": _("Size"),
@@ -286,20 +281,13 @@ def get_preset_records(country=None):
 				{"attribute_value": _("White"), "abbr": "WHI"},
 			],
 		},
-		# Issue Priority
-		{"doctype": "Issue Priority", "name": _("Low")},
-		{"doctype": "Issue Priority", "name": _("Medium")},
-		{"doctype": "Issue Priority", "name": _("High")},
+		# [REMOVED - Issue Priority doctype not in this build (Support module removed)]
 		{"doctype": "Party Type", "party_type": "Customer", "account_type": "Receivable"},
 		{"doctype": "Party Type", "party_type": "Supplier", "account_type": "Payable"},
 		{"doctype": "Party Type", "party_type": "Employee", "account_type": "Payable"},
 		{"doctype": "Party Type", "party_type": "Shareholder", "account_type": "Payable"},
-		{"doctype": "Opportunity Type", "name": _("Sales")},
-		{"doctype": "Opportunity Type", "name": _("Support")},
-		{"doctype": "Opportunity Type", "name": _("Maintenance")},
-		{"doctype": "Project Type", "project_type": _("Internal")},
-		{"doctype": "Project Type", "project_type": _("External")},
-		{"doctype": "Project Type", "project_type": _("Other")},
+		# [REMOVED - Opportunity Type doctype not in this build (CRM module removed)]
+		# [REMOVED - Project Type doctype not in this build (Projects module removed)]
 		{"doctype": "Print Heading", "print_heading": _("Credit Note")},
 		{"doctype": "Print Heading", "print_heading": _("Debit Note")},
 		# Share Management
@@ -311,10 +299,7 @@ def get_preset_records(country=None):
 		{"doctype": "Market Segment", "market_segment": _("Upper Income")},
 		# Warehouse Type
 		{"doctype": "Warehouse Type", "name": "Transit"},
-		{"doctype": "Workstation Operating Component", "component_name": _("Electricity")},
-		{"doctype": "Workstation Operating Component", "component_name": _("Consumables")},
-		{"doctype": "Workstation Operating Component", "component_name": _("Rent")},
-		{"doctype": "Workstation Operating Component", "component_name": _("Wages")},
+		# [REMOVED - Workstation Operating Component not in this build (Manufacturing removed)]
 	]
 	return records
 
