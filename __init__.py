@@ -1,12 +1,12 @@
 import functools
 import inspect
 from typing import TypeVar
-
+from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 from frappe.utils.user import is_website_user
 
-__version__ = "16.19.1"
+__version__ = "0.1.0"
 
 
 def get_default_company(user=None):
