@@ -16,7 +16,6 @@ setup(
         "python-youtube~=0.9.8",
         "pypng~=0.20220715.0",
         "mt-940>=4.26.0",
-        "frappe>=16,<17",
     ],
     python_requires=">=3.10",
     # Use the same metadata as pyproject.toml where appropriate

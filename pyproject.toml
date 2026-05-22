@@ -5,7 +5,7 @@ dynamic = ["version"]
 description = "Minimal ERPNext Core"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["frappe>=16,<17"]
+dependencies = []
 
 [tool.flit.module]
 name = "erpnext"
