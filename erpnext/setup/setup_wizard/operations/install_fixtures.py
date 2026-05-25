@@ -306,7 +306,7 @@ def install(country=None):
 
 	for doctype, title_field, filename in (
 		("Designation", "designation_name", "designation.txt"),
-		("Sales Stage", "stage_name", "sales_stage.txt"),
+		# [REMOVED - Sales Stage doctype not in this build (CRM module removed)]
 		("Industry Type", "industry", "industry_type.txt"),
 		("UTM Source", "name", "marketing_source.txt"),
 		("Sales Partner Type", "sales_partner_type", "sales_partner_type.txt"),
@@ -402,24 +402,7 @@ def add_uom_data():
 			).db_insert()
 
 
-def get_sale_stages():
-	# Sale Stages
-	return [
-		{"doctype": "Sales Stage", "stage_name": _("Prospecting")},
-		{"doctype": "Sales Stage", "stage_name": _("Qualification")},
-		{"doctype": "Sales Stage", "stage_name": _("Needs Analysis")},
-		{"doctype": "Sales Stage", "stage_name": _("Value Proposition")},
-		{"doctype": "Sales Stage", "stage_name": _("Identifying Decision Makers")},
-		{"doctype": "Sales Stage", "stage_name": _("Perception Analysis")},
-		{"doctype": "Sales Stage", "stage_name": _("Proposal/Price Quote")},
-		{"doctype": "Sales Stage", "stage_name": _("Negotiation/Review")},
-	]
-
-
-def add_sale_stages():
-	records = get_sale_stages()
-	for sales_stage in records:
-		frappe.get_doc(sales_stage).db_insert()
+# [REMOVED - get_sale_stages and add_sale_stages functions removed (Sales Stage doctype is CRM module)]
 
 
 def install_company(args):
