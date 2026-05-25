@@ -171,11 +171,14 @@ class QualityInspection(Document):
 	@frappe.whitelist()
 	def get_quality_inspection_template(self):
 		template = ""
-		if self.bom_no:
-			template = frappe.db.get_value("BOM", self.bom_no, "quality_inspection_template")
 
-		if not template:
-			template = frappe.db.get_value("BOM", self.item_code, "quality_inspection_template")
+		# BOM doctype is from the manufacturing module which may not be installed
+		if frappe.db.exists("DocType", "BOM"):
+			if self.bom_no:
+				template = frappe.db.get_value("BOM", self.bom_no, "quality_inspection_template")
+
+			if not template:
+				template = frappe.db.get_value("BOM", self.item_code, "quality_inspection_template")
 
 		self.quality_inspection_template = template
 		self.get_item_specification_details()
@@ -444,6 +447,9 @@ def quality_inspection_query(doctype, txt, searchfield, start, page_len, filters
 
 @frappe.whitelist()
 def make_quality_inspection(source_name, target_doc=None):
+	if not frappe.db.exists("DocType", "BOM"):
+		frappe.throw(_("BOM (Bill of Materials) is not available. The Manufacturing module is not installed in this build."))
+
 	def postprocess(source, doc):
 		doc.inspected_by = frappe.session.user
 		doc.get_quality_inspection_template()
