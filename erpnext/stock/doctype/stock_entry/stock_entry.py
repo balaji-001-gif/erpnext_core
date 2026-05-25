@@ -2825,9 +2825,13 @@ class StockEntry(StockController, SubcontractingInwardController):
 					)
 
 		if not self.process_loss_percentage and not self.process_loss_qty:
-			self.process_loss_percentage = frappe.get_cached_value(
-				"BOM", self.bom_no, "process_loss_percentage"
-			)
+			try:
+				self.process_loss_percentage = frappe.get_cached_value(
+					"BOM", self.bom_no, "process_loss_percentage"
+				)
+			except ImportError:
+				# BOM doctype is from the manufacturing module which is not installed in this build
+				self.process_loss_percentage = 0
 
 		if self.process_loss_percentage and not self.process_loss_qty:
 			self.process_loss_qty = flt(
