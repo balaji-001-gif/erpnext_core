@@ -4388,6 +4388,15 @@ def get_batchwise_serial_nos(item_code, row):
 	return batchwise_serial_nos
 
 
+@frappe.whitelist()
+def is_material_consumption_enabled():
+    """No-op stub since manufacturing module is not installed in this build.
+    Returns 0 (disabled) to prevent errors when the full manufacturing module is unavailable.
+    This is called from stock_entry.js."""
+    return 0
+
+
+
 def get_transferred_qty(material_request):
 	sed = DocType("Stock Entry Detail")
 

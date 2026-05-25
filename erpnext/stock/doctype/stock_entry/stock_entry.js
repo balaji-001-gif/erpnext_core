@@ -658,7 +658,7 @@ frappe.ui.form.on("Stock Entry", {
 	validate_purpose_consumption: function (frm) {
 		frappe
 			.call({
-				method: "erpnext.manufacturing.doctype.manufacturing_settings.manufacturing_settings.is_material_consumption_enabled",
+				method: "erpnext.stock.doctype.stock_entry.stock_entry.is_material_consumption_enabled",
 			})
 			.then((r) => {
 				if (cint(r.message) == 0 && frm.doc.purpose == "Material Consumption for Manufacture") {
