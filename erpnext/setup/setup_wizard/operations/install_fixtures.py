@@ -293,10 +293,7 @@ def get_preset_records(country=None):
 		# Share Management
 		{"doctype": "Share Type", "title": _("Equity")},
 		{"doctype": "Share Type", "title": _("Preference")},
-		# Market Segments
-		{"doctype": "Market Segment", "market_segment": _("Lower Income")},
-		{"doctype": "Market Segment", "market_segment": _("Middle Income")},
-		{"doctype": "Market Segment", "market_segment": _("Upper Income")},
+		# [REMOVED - Market Segment doctype not in this build (CRM module removed)]
 		# Warehouse Type
 		{"doctype": "Warehouse Type", "name": "Transit"},
 		# [REMOVED - Workstation Operating Component not in this build (Manufacturing removed)]
@@ -403,17 +400,6 @@ def add_uom_data():
 					"value": d.get("value"),
 				}
 			).db_insert()
-
-
-def add_market_segments():
-	records = [
-		# Market Segments
-		{"doctype": "Market Segment", "market_segment": _("Lower Income")},
-		{"doctype": "Market Segment", "market_segment": _("Middle Income")},
-		{"doctype": "Market Segment", "market_segment": _("Upper Income")},
-	]
-
-	make_records(records)
 
 
 def get_sale_stages():
