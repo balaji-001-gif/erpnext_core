@@ -423,20 +423,29 @@ class PaymentRequest(Document):
 
 	def send_email(self):
 		"""send email with payment link"""
-		email_args = {
-			"recipients": self.email_to,
-			"sender": None,
-			"subject": self.subject,
-			"message": self.get_message(),
-			"now": True,
-			"attachments": [
+		attachments = []
+		try:
+			attachments.append(
 				frappe.attach_print(
 					self.reference_doctype,
 					self.reference_name,
 					file_name=self.reference_name,
 					print_format=self.print_format,
 				)
-			],
+			)
+		except Exception:
+			frappe.log_error(
+				title=_("Payment Request PDF Generation Failed"),
+				message=frappe.get_traceback(),
+			)
+
+		email_args = {
+			"recipients": self.email_to,
+			"sender": None,
+			"subject": self.subject,
+			"message": self.get_message(),
+			"now": True,
+			"attachments": attachments,
 		}
 		enqueue(
 			method=frappe.sendmail,
